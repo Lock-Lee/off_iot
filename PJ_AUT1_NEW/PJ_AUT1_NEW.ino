@@ -717,7 +717,8 @@ void loop() {
       String part2 = splitOfstrng(received, ':', 1);
       SetTimeEnd3.hour = part1;
       SetTimeEnd3.min = part2;
-      
+       Serial.print( SetTimeEnd3.hour);
+      Serial.print( SetTimeEnd3.min);
 
 
     }
@@ -1000,12 +1001,12 @@ void readKeypad() {
       Serial.println("start 2");
       digitalWrite(pump1, HIGH);
     }
-    if (RealTime.hour.toInt() == SetTimestart3.hour.toInt() && RealTime.min.toInt() == SetTimeEnd3.min.toInt() ) {
+    if (RealTime.hour.toInt() == SetTimeEnd3.hour.toInt() && RealTime.min.toInt() == SetTimeEnd3.min.toInt() ) {
       stateTime3 = 0;
       water_state = 0;
       Serial.println("stop 3");
       digitalWrite(pump1, LOW);
-    } else if ( RealTime.hour.toInt() == SetTimestart3.hour.toInt() && RealTime.min.toInt() == SetTimeEnd3.min.toInt()) {
+    } else if ( RealTime.hour.toInt() == SetTimestart3.hour.toInt() && RealTime.min.toInt() == SetTimestart3.min.toInt()) {
       stateTime3 = 1;
       water_state = 1;
       Serial.println("start 3");
@@ -1049,13 +1050,6 @@ void readKeypad() {
       digitalWrite(pump3, HIGH);
       digitalWrite(pump4, HIGH);
     }
-//    if (ph_state == 1) {
-//      digitalWrite(pump3, HIGH);
-//      digitalWrite(pump4, HIGH);
-//    } else if (ph_state == 0) {
-//      digitalWrite(pump3, LOW);
-//      digitalWrite(pump4, LOW);
-//    }
 
     Set_Moisture();
 
@@ -1104,7 +1098,7 @@ void Set_Moisture () {
 
   if (Moisture < SoilStartINT ||( stateTime1 == 1 || stateTime2 == 1  || stateTime3 == 1) ) {
     digitalWrite(pump1, HIGH);
-    Serial.println("Start pump1 " );
+//    Serial.println("Start pump1 " );
   }
 
 
