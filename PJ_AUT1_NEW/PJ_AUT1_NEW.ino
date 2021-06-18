@@ -1111,9 +1111,11 @@ void Set_Moisture () {
     digitalWrite(pump1, HIGH);
 //    Serial.println("Start pump1 " );
   }
+   else if(){
+    
+   }
 
-
-  else if ((Moisture >= SoilENDINT )  && SoilENDINT > 0   &&( stateTime1 == 0 || stateTime2 == 0  || stateTime3 == 0)) {
+  else if ((Moisture >= SoilENDINT ||Moisture <= SoilStartINT )  && SoilENDINT > 0   &&( stateTime1 == 0 || stateTime2 == 0  || stateTime3 == 0)) {
    digitalWrite(pump1, LOW);
     Serial.println("END pump1 " );
   }
