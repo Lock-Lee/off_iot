@@ -230,6 +230,7 @@ void setTimeStart1(int x, int y)  {
   lcd.cursor();
   timeStart1.hour = read_num(23, x, y);
   timeStart1.min = read_num(59, x + 3, y);
+  Serial.println((String)"timeStart1="+timeStart1.hour+":"+timeStart1.min);
   Serial.print(timeStart1.hour);
   Serial.println(timeStart1.min);
   lcd.noCursor();
@@ -254,8 +255,7 @@ void setTimeEnd1(int x, int y) {
   lcd.cursor();
   timeEnd1.hour = read_num(23, x, y);
   timeEnd1.min = read_num(59, x + 3, y );
-  Serial.print(timeEnd1.hour);
-  Serial.println(timeEnd1.min);
+ Serial.println((String)"timeEnd1="+timeEnd1.hour+":"+timeEnd1.min);
   lcd.noCursor();
   if (timeEnd1.hour < 10) {
     SetTimeEnd1.hour = (String)"0" + timeEnd1.hour;
@@ -277,7 +277,7 @@ void setTimeStart2(int x, int y)  {
   lcd.cursor();
   timeStart2.hour = read_num(23, x, y);
   timeStart2.min = read_num(59, x + 3, y);
-
+Serial.println((String)"timeStart2="+timeStart2.hour+":"+timeStart2.min);
   lcd.noCursor();
 
   if (timeStart2.hour < 10) {
@@ -301,7 +301,7 @@ void setTimeEnd2(int x, int y)  {
   lcd.cursor();
   timeEnd2.hour = read_num(23, x, y);
   timeEnd2.min = read_num(59, x + 3, y);
-
+Serial.println((String)"timeEnd2="+timeEnd2.hour+":"+timeEnd2.min);
   lcd.noCursor();
   if (timeEnd2.hour < 10) {
     SetTimeEnd2.hour = (String)"0" + timeEnd2.hour;
@@ -323,6 +323,7 @@ void setTimeStart3(int x, int y)  {
   lcd.cursor();
   timeStart3.hour = read_num(23, x, y);
   timeStart3.min = read_num(59, x + 3, y);
+  Serial.println((String)"timeStart3="+timeStart3.hour+":"+timeStart3.min);
   lcd.noCursor();
   if (timeStart3.hour < 10) {
     SetTimestart3.hour = (String)"0" + timeStart1.hour;
@@ -345,7 +346,7 @@ void setTimeEnd3(int x, int y)  {
   lcd.cursor();
   timeEnd3.hour = read_num(23, x, y);
   timeEnd3.min = read_num(59, x + 3, y);
-
+Serial.println((String)"timeEnd3="+timeEnd3.hour+":"+timeEnd3.min);
   lcd.noCursor();
   if (timeEnd3.hour < 10) {
     SetTimeEnd3.hour = (String)"0" + timeEnd3.hour;
@@ -371,7 +372,7 @@ void setTimePHStart1(int x, int y)  {
   lcd.cursor();
   timePHStart1.hour = read_num(23, x, y);
   timePHStart1.min = read_num(59, x + 3, y);
-
+Serial.println((String)"timePHStart1="+timePHStart1.hour+":"+timePHStart1.min);
   lcd.noCursor();
   if (timePHStart1.hour < 10) {
     SetTimephstart1.hour = (String)"0" + timePHStart1.hour;
@@ -394,7 +395,7 @@ void setTimePHEnd1(int x, int y) {
   lcd.cursor();
   timePHEnd1.hour = read_num(23, x, y);
   timePHEnd1.min = read_num(59, x + 3, y );
-
+Serial.println((String)"timePHEnd1="+timePHEnd1.hour+":"+timePHEnd1.min);
   lcd.noCursor();
   if (timePHEnd1.hour < 10) {
     SetTimephEnd1.hour = (String)"0" + timePHEnd1.hour;
@@ -416,7 +417,7 @@ void setTimePHStart2(int x, int y)  {
   lcd.cursor();
   timePHStart2.hour = read_num(23, x, y);
   timePHStart2.min = read_num(59, x + 3, y);
-
+Serial.println((String)"timePHStart2"+timePHStart2.hour+":"+timePHStart2.min);
   lcd.noCursor();
   if (timePHStart2.hour < 10) {
     SetTimephstart2.hour = (String)"0" + timePHStart2.hour;
@@ -440,7 +441,7 @@ void setTimePHEnd2(int x, int y)  {
   lcd.cursor();
   timePHEnd2.hour = read_num(23, x, y);
   timePHEnd2.min = read_num(59, x + 3, y);
-  timePHEnd2.sec = read_num(59, x + 6, y);
+  Serial.println((String)"timePHEnd2"+timePHEnd2.hour+":"+timePHEnd2.min);
   lcd.noCursor();
   if (timePHEnd2.hour < 10) {
     SetTimephEnd2.hour = (String)"0" + timePHEnd2.hour;
@@ -448,13 +449,10 @@ void setTimePHEnd2(int x, int y)  {
   if (timePHEnd2.min < 10) {
     SetTimephEnd2.min = (String)"0" + timePHEnd2.min;
   }
-  if (timePHEnd2.sec < 10) {
-    SetTimephEnd2.sec = (String)"0" + timePHEnd2.sec;
-  }
+ 
   else {
     SetTimephEnd2.hour = (String)timePHEnd2.hour;
     SetTimephEnd2.min = (String)timePHEnd2.min;
-    SetTimephEnd2.sec = (String)timePHEnd2.sec;
   }
 }
 void setTimePHStart3(int x, int y)  {
@@ -464,7 +462,7 @@ void setTimePHStart3(int x, int y)  {
   lcd.cursor();
   timePHStart3.hour = read_num(23, x, y);
   timePHStart3.min = read_num(59, x + 3, y);
-  timePHStart3.sec = read_num(59, x + 6, y);
+  Serial.println((String)"timePHStart3"+timePHStart3.hour+":"+timePHStart3.min);
   lcd.noCursor();
   if (timePHStart3.hour < 10) {
     SetTimephstart3.hour = (String)"0" + timePHStart3.hour;
@@ -472,13 +470,11 @@ void setTimePHStart3(int x, int y)  {
   if (timePHStart3.min < 10) {
     SetTimephstart3.min = (String)"0" + timePHStart3.min;
   }
-  if (timePHStart3.sec < 10) {
-    SetTimephstart3.sec = (String)"0" + timePHStart3.sec;
-  }
+ 
   else {
     SetTimephstart3.hour = (String)timePHStart3.hour;
     SetTimephstart3.min = (String)timePHStart3.min;
-    SetTimephstart3.sec = (String)timePHStart3.sec;
+   
   }
 }
 void setTimePHEnd3(int x, int y)  {
@@ -488,7 +484,7 @@ void setTimePHEnd3(int x, int y)  {
   lcd.cursor();
   timePHEnd3.hour = read_num(23, x, y);
   timePHEnd3.min = read_num(59, x + 3, y);
-  timePHEnd3.sec = read_num(59, x + 6, y);
+  Serial.println((String)"timePHEnd3"+timePHEnd3.hour+":"+timePHEnd3.min);
   lcd.noCursor();
   if (timePHEnd3.hour < 10) {
     SetTimephEnd3.hour = (String)"0" + timePHEnd3.hour;
@@ -496,13 +492,10 @@ void setTimePHEnd3(int x, int y)  {
   if (timePHEnd2.min < 10) {
     SetTimephEnd3.min = (String)"0" + timePHEnd3.min;
   }
-  if (timePHEnd2.sec < 10) {
-    SetTimephEnd3.sec = (String)"0" + timePHEnd3.sec;
-  }
+ 
   else {
     SetTimephEnd3.hour = (String)timePHEnd3.hour;
     SetTimephEnd3.min = (String)timePHEnd3.min;
-    SetTimephEnd3.sec = (String)timePHEnd3.sec;
   }
 }
 
