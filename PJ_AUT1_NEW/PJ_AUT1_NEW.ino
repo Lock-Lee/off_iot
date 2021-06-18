@@ -1000,12 +1000,12 @@ void readKeypad() {
       Serial.println("start 2");
       digitalWrite(pump1, HIGH);
     }
-    if (RealTime.hour.toInt() == SetTimeEnd3.hour.toInt() && RealTime.min.toInt() == SetTimeEnd3.min.toInt() ) {
+    if (RealTime.hour.toInt() == SetTimestart3.hour.toInt() && RealTime.min.toInt() == SetTimeEnd3.min.toInt() ) {
       stateTime3 = 0;
       water_state = 0;
       Serial.println("stop 3");
       digitalWrite(pump1, LOW);
-    } else if ( RealTime.hour.toInt() == SetTimestart3.hour.toInt() && RealTime.min.toInt() == SetTimestart3.min.toInt()) {
+    } else if ( RealTime.hour.toInt() == SetTimestart3.hour.toInt() && RealTime.min.toInt() == SetTimeEnd3.min.toInt()) {
       stateTime3 = 1;
       water_state = 1;
       Serial.println("start 3");
